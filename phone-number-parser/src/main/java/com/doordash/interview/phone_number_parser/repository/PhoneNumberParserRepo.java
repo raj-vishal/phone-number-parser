@@ -1,6 +1,7 @@
 package com.doordash.interview.phone_number_parser.repository;
 
 import com.doordash.interview.phone_number_parser.model.PhoneAndType;
+import com.doordash.interview.phone_number_parser.model.PhoneTypeEnum;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -12,7 +13,7 @@ public interface PhoneNumberParserRepo extends JpaRepository<PhoneAndType, Long>
 
     @Transactional
     PhoneAndType save(PhoneAndType phoneAndType);
-    PhoneAndType findByPhoneNumberAndPhoneType(String number, String phoneType);
+    PhoneAndType findByPhoneNumberAndPhoneType(String number, PhoneTypeEnum phoneType);
 
     @Modifying(clearAutomatically = true)
     @Transactional

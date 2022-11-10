@@ -2,6 +2,7 @@ package com.doordash.interview.phone_number_parser.service;
 
 import com.doordash.interview.phone_number_parser.model.PhoneAndType;
 import com.doordash.interview.phone_number_parser.model.PhoneAndTypeResponseVO;
+import com.doordash.interview.phone_number_parser.model.PhoneTypeEnum;
 import com.doordash.interview.phone_number_parser.model.RawPhoneNumRequestVO;
 import com.doordash.interview.phone_number_parser.repository.PhoneNumberParserRepo;
 import lombok.extern.slf4j.Slf4j;
@@ -52,11 +53,11 @@ public class PhoneNumberParserServiceImpl implements PhoneNumberParserService {
     private PhoneAndTypeResponseVO populatePhoneAndTypeResponse(Map<String, String> phoneNumMap, PhoneAndTypeResponseVO responseVO) {
         List<PhoneAndType> results = new ArrayList<PhoneAndType>();
         phoneNumMap.forEach((phoneType, number) -> {
-            PhoneAndType objectInDB = phoneNumberParserRepo.findByPhoneNumberAndPhoneType(number, phoneType);
+            PhoneAndType objectInDB = phoneNumberParserRepo.findByPhoneNumberAndPhoneType(number, PhoneTypeEnum.valueOf(phoneType));
             PhoneAndType phoneAndTypeObj = new PhoneAndType();
             if(null == objectInDB) {
                 phoneAndTypeObj.setPhoneNumber(number);
-                phoneAndTypeObj.setPhoneType(phoneType);
+                phoneAndTypeObj.setPhoneType(PhoneTypeEnum.valueOf(phoneType));
                 phoneAndTypeObj.setOccurrences(1);
             } else {
                 phoneAndTypeObj = objectInDB;

@@ -1,7 +1,9 @@
 package com.doordash.interview.phone_number_parser.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,6 +12,8 @@ import javax.persistence.Id;
 
 @Data
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
 public class PhoneAndType {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -17,7 +21,6 @@ public class PhoneAndType {
     @JsonProperty("phone_number")
     private String phoneNumber;
     @JsonProperty("phone_type")
-    private String phoneType;
+    private PhoneTypeEnum phoneType;
     private int occurrences;
-
 }

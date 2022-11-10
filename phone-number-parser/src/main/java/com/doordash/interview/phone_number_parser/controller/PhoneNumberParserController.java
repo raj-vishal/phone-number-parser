@@ -19,6 +19,9 @@ public class PhoneNumberParserController {
     private PhoneNumberParserService phoneNumberParserService;
 
     @PostMapping("/phone-numbers")
+    /**
+     * Post method interface where customer provides the raw phone numbers and phone types
+     */
     public PhoneAndTypeResponseVO savePhoneNumbers(@RequestBody RawPhoneNumRequestVO requestVO) {
         PhoneAndTypeResponseVO responseVO = phoneNumberParserService.savePhoneNumbers(requestVO);
         return responseVO;
