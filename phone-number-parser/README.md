@@ -7,10 +7,7 @@ https://docs.google.com/document/d/1JH8UD2U6is-lJ_ogadIjWASj9ZJw6z0sOIENk_zsomg/
 1. Install OpenJDK 11 (64-bit). We recommend AdoptOpenJDK, which can be installed like so:
     - OSX:
         - Install `brew` first by visiting https://brew.sh and following the instructions.
-        - Run these commands:
-          ```
-          $ brew tap AdoptOpenJDK/openjdk
-          $ brew install --cask adoptopenjdk11
+        - INstall JDK version '8/11'
           ```
     - Windows: https://adoptopenjdk.net/installation.html#x64_win-jdk
     - Linux: https://adoptopenjdk.net/installation.html#linux-pkg
@@ -27,7 +24,7 @@ https://docs.google.com/document/d/1JH8UD2U6is-lJ_ogadIjWASj9ZJw6z0sOIENk_zsomg/
 1. Open IntelliJ, and open the `phone_number_parser` directory.
 1. Click Intellij IDEA | Preferences | Build, Execution, Deployment | Compiler | Annotation Processors and ensure Enable annotation processing is checked. Click OK to apply the changes.
 1. Click Build -> Rebuild Project and wait for the build to complete successfully
-1. Right click on `Application.kt` and click `Run`
+1. Right click on `PhoneNumberParserApplication.java` and click `Run`
 1. You should see a log message at the bottom of the console that looks like this:
    ```
    2020-12-21 21:57:08,995 main DEBUG LoggerContext[name=3d4eac69, org.apache.logging.log4j.core.LoggerContext@626abbd0] started OK.
