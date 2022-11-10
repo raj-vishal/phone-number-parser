@@ -21,7 +21,7 @@ https://docs.google.com/document/d/1JH8UD2U6is-lJ_ogadIjWASj9ZJw6z0sOIENk_zsomg/
    ```
    db_1  | 2020-12-22 05:57:02.006 UTC [1] LOG:  database system is ready to accept connections
    ```
-1. Open IntelliJ, and open the `phone_number_parser` directory.
+1. Open IntelliJ, and open the `phone-number-parser` directory.
 1. Click Intellij IDEA | Preferences | Build, Execution, Deployment | Compiler | Annotation Processors and ensure Enable annotation processing is checked. Click OK to apply the changes.
 1. Click Build -> Rebuild Project and wait for the build to complete successfully
 1. Right click on `PhoneNumberParserApplication.java` and click `Run`
@@ -29,7 +29,7 @@ https://docs.google.com/document/d/1JH8UD2U6is-lJ_ogadIjWASj9ZJw6z0sOIENk_zsomg/
    ```
    2020-12-21 21:57:08,995 main DEBUG LoggerContext[name=3d4eac69, org.apache.logging.log4j.core.LoggerContext@626abbd0] started OK.
 
-1. In your browser, navigate to http://localhost:8080/health which should return `{"status": "UP"}`. This means the project is running successfully!
+1. In your browser, navigate to http://localhost:9001/health which should return `{"status": "UP"}`. This means the project is running successfully!
 
 ## Common Tasks
 - To add a new database migration, just add a new .sql file to resources/db/migration/ with file format `V2__AddSomething.sql`. Migrations get run automatically on application initialization.
