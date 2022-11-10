@@ -1,0 +1,20 @@
+# Server configuration
+server:
+  port: 9001
+
+spring:
+  # Database configuration
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/phone_number_db
+    username: root
+    password: password
+
+  # JPA properties
+  jpa:
+    hibernate:
+      ddl-auto: update # first time - switch "none" at "create"
+    show-sql: true
+    database: postgresql
+    generate-ddl: true
+
